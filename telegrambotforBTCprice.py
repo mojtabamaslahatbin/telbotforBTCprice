@@ -1,6 +1,6 @@
-from telegram.ext import Updater, inlinequeryhandler, CommandHandler
+from telegram.ext import Updater, CommandHandler
 import requests
-import re
+
 
 # Access the API and get the BTC price
 def get_price():
