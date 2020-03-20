@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler
 import requests
 
 
-# Access the API and get the BTC price
 def get_price():
     contents = requests.get(
         'https://api.coinbase.com/v2/prices/spot?currency=USD')
@@ -10,7 +9,6 @@ def get_price():
     return price
 
 
-# send the message
 def bop(bot, update):
     price = get_price()
     chat_id = update.message.chat_id
@@ -18,7 +16,6 @@ def bop(bot, update):
         chat_id=chat_id, text="at this time BTC price is :" + price)
 
 
-# Main program
 def main():
     updater = Updater('your telegram bot token')
     dp = updater.dispatcher
